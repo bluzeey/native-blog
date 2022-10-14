@@ -5,7 +5,6 @@ import {Context} from '../context/BlogContext'
 export default function ShowScreen({navigation,route}) {
 const itemId=route.params.id
 const {state}=useContext(Context)
-console.log({itemId})
 const blogPost=state.find((blogPost)=>blogPost.id===itemId)
 
 return (
