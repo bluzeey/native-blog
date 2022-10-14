@@ -1,10 +1,10 @@
 import Navigation from './navigation';
-import { BlogProvider } from './context/BlogContext';
+import { Provider } from './context/BlogContext';
 
 export default function App() {
     return (
-      <BlogProvider>
+      <Provider>
         <Navigation/>
-      </BlogProvider>
+      </Provider>
     );
 }
