@@ -1,27 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext,useLayoutEffect } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   FlatList,
-  Button,
   TouchableOpacity
 } from 'react-native';
 import { Context } from '../context/BlogContext';
-import { Feather } from '@expo/vector-icons';
+import { EvilIcons,Feather } from '@expo/vector-icons'
 
 const IndexScreen = ({navigation}) => {
   const { state, deleteBlogPost } = useContext(Context);
   
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity onPress={()=>navigation.navigate('Create')}>
-        <Feather size={30} name="plus" />
-      </TouchableOpacity>
+        <EvilIcons size={30} name="pencil" />
+        </TouchableOpacity>
       ),
     });
   }, [navigation]);
+  
 
   return (
     <View>
@@ -46,15 +46,6 @@ const IndexScreen = ({navigation}) => {
     </View>
   );
 };
-
-IndexScreen.navigationOptions=({navigation})=>{
-  return{
-    headerRight:()=>
-      <TouchableOpacity onPress={()=>navigation.navigate('Create')}>
-        <Feather size={30} name="plus" />
-      </TouchableOpacity>
-  };
-}
 
 
 const styles = StyleSheet.create({
